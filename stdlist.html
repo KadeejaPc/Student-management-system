@@ -1,0 +1,12 @@
+
+{% extends 'temp/advisor.html' %}
+{% block admin %}
+    <h2>Upload Internal Marks</h2><br><h3>Students List</h3>
+
+{% if objval %}
+{% for ob in objval %}
+
+<a href="{% url 'select_int' idd=ob.s_id %}">{{ ob.sname }}</a><br>
+{% endfor %}
+{% endif %}
+{% endblock %}

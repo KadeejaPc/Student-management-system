@@ -1,0 +1,56 @@
+{% extends 'temp/advisor.html' %}
+{% block admin %}
+<div align="center">
+    <h1>RESULT ANALYSIS</h1>
+ <form id="form1" name="form1" method="post" action="">
+
+{% csrf_token %}
+
+
+  <div class="row margin-bottom-20">
+                                    <div class="col-md-6 col-md-offset-0">
+                                        <select class="form-control"  required name="sub" >
+                                            <option value="">select subject</option>
+                                             {% if objval3 %}
+        {% for ob3 in objval3 %}
+      <option value="{{ ob3.sub_name }}">{{ ob3.sub_name }}||{{ ob3.sem }}</option>
+        {% endfor %}
+        {% endif %}
+                                        </select>
+                                    </div>
+                                </div>
+ Subject Pass Percentage:{{ subcount }}
+  <div class="row margin-bottom-20">
+                                    <div class="col-md-6 col-md-offset-0">
+                                        <select class="form-control"  required name="sem" >
+                                            <option value="">select sem</option>
+                                             <option value="1"> 1</option>
+                                             <option value="2"> 2</option>
+                                             <option value="3"> 3</option>
+                                             <option value="4"> 4</option>
+                                             <option value="5"> 5</option>
+                                             <option value="6"> 6</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+
+                                             {% if obj %}
+        {% for ob5 in obj %}
+  {{ ob5.pass_faile }}
+        {% endfor %}
+        {% endif %}
+
+
+
+ Semester Pass Percentage:{{ count }}
+      <div class="row margin-bottom-20">
+                                    <div class="col-md-6 col-md-offset-0">
+                                         <button type="submit" class="btn btn-primary">ADD</button>
+                                    </div>
+                                </div>
+
+                            </form>
+
+
+{% endblock %}

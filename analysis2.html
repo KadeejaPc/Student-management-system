@@ -1,0 +1,15 @@
+
+{% extends 'temp/advisor.html' %}
+{% block admin %}
+{#    <div style="background-image: url('/static/img/back2.jpg')">#}
+    <legend> <h2>Result Analysis</h2></legend>
+<h3>Semester Analysis:{{ sem }}</h3>
+{% if objval %}
+    <h4>Select a subject</h4>
+{% for ob in objval %}
+
+<a href="{% url 'analysis' idd=ob.sub_id %}">{{ ob.sub_name }}</a><br>
+{% endfor %}
+{% endif %}
+{#    </div>#}
+{% endblock %}

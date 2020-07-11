@@ -1,0 +1,32 @@
+{% extends 'temp/advisor.html' %}
+{% block admin %}
+<h3>Upload internal</h3><br>
+    <div align="center">
+<fieldset>
+    <form method="post">
+        {% csrf_token %}
+  <table><tr><td width="100"> Select Course:</td>
+
+   <td> <select name="course">
+        <option value="1">MCA</option>
+        <option value="2">MBA</option>
+  </select></td>
+  </tr>
+
+
+ <tr><td>Select Subject:</td> <td><select class="form-control"  required name="sub" >
+                                            <option value="">select subject</option>
+                                             {% if objv %}
+        {% for ob1 in objv %}
+      <option value="{{ ob1.0 }}">{{ ob1.0 }}</option>
+        {% endfor %}
+                                                 </select>
+
+        {% endif %}
+ </td></tr>
+
+  <tr><td align="center"><legend> <br> <input type="submit" name="submit" value="ok" >
+  </legend></td></tr></table>
+    </form>
+</fieldset></div>
+{% endblock %}

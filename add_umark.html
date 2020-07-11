@@ -1,0 +1,71 @@
+{% extends 'temp/advisor.html' %}
+{% block admin %}
+<div align="center">
+    <h1>UPLOAD UNIVERSITY MARK</h1>
+ <form id="form1" name="form1" method="post" action="">
+
+{% csrf_token %}
+
+                                <label></label>
+                                <div class="row margin-bottom-20">
+                                    <div class="col-md-6 col-md-offset-0">
+                                        <select class="form-control"  required name="sid" >
+                                            <option value="">select student</option>
+                                             {% if objval %}
+        {% for ob in objval %}
+      <option value="{{ ob.s_id }}">{{ ob.sname }}||{{ ob.s_id }}</option>
+        {% endfor %}
+        {% endif %}
+                                        </select>
+                                    </div>
+                                </div>
+  <div class="row margin-bottom-20">
+                                    <div class="col-md-6 col-md-offset-0">
+                                        <select class="form-control"  required name="sub" >
+                                            <option value="">select subject</option>
+                                             {% if objval3 %}
+        {% for ob3 in objval3 %}
+      <option value="{{ ob3.sub_name }}">{{ ob3.sub_name }}||{{ ob3.sem }}</option>
+        {% endfor %}
+        {% endif %}
+                                        </select>
+                                    </div>
+                                </div>
+
+  <div class="row margin-bottom-20">
+                                    <div class="col-md-6 col-md-offset-0">
+                                        <select class="form-control"  required name="sem" >
+                                            <option value="">select sem</option>
+                                             <option value="1"> 1</option>
+                                             <option value="2"> 2</option>
+                                             <option value="3"> 3</option>
+                                             <option value="4"> 4</option>
+                                             <option value="5"> 5</option>
+                                             <option value="6"> 6</option>
+
+
+                                        </select>
+                                    </div>
+                                </div>
+                                <label>
+                                    <span class="color-red">Mark</span>
+                                </label>
+                                <div class="row margin-bottom-20">
+                                    <div class="col-md-6 col-md-offset-0">
+                                        <input class="form-control" placeholder="Mark" required name="mark" type="text">
+                                    </div>
+                                </div>
+
+
+
+
+      <div class="row margin-bottom-20">
+                                    <div class="col-md-6 col-md-offset-0">
+                                         <button type="submit" class="btn btn-primary">ADD</button>
+                                    </div>
+                                </div>
+
+                            </form>
+
+
+{% endblock %}

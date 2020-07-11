@@ -1,0 +1,106 @@
+{% extends 'temp/advisor.html' %}
+{% block admin %}
+<div align="center">
+
+    <h2><b>Upload Attendance</b> </h2><br>
+
+<fieldset>
+    <form method="post">
+        {% csrf_token %}
+        <table> <tr><td width="100">Select Course:</td>
+
+   <td> <select name="course">
+        <option value="1">MCA</option>
+        <option value="2">MBA</option>
+   </select></td></tr>
+           <tr><td>  Select Sem :</td>
+
+   <td> <select name="sem">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+
+    </select></td></tr>
+            <tr><td>Select Subject:</td><td> <select required name="sub" >
+                                            <option value="">select subject</option>
+                                             {% if objv %}
+        {% for ob1 in objv %}
+      <option value="{{ ob1.0 }}">{{ ob1.0 }}</option>
+        {% endfor %}
+                                                 </select></td></tr>
+
+        {% endif %}
+
+
+            <tr><td align="center" width="100"><br> <legend><input type="submit" name="submit" value="ok" ></legend></td></tr>
+        </table>
+    </form>
+</fieldset>
+    <fieldset>
+
+        {% if objval %}
+            <br>
+            <h5>Select a Student:</h5>
+        {% for ob in objval %}
+
+        <a href="{% url 'attendence' idd=ob.1 %}">{{ ob.0 }}</a><br>
+
+        {% endfor %}
+    {% endif %}
+
+    </fieldset>
+
+
+
+
+
+{##}
+{##}
+{#    <h1>  ATTANDENCE</h1>#}
+{# <form id="form1" name="form1" method="post" action="{% url 'attendence' %}">#}
+{##}
+{#    {% csrf_token %}#}
+{##}
+{##}
+{#  <label></label>#}
+{#                                <div class="row margin-bottom-20">#}
+{#                                    <div class="col-md-6 col-md-offset-0">#}
+{#                                        <select class="form-control"  required name="sid" >#}
+{#                                            <option value="">select student</option>#}
+{#                                             {% if objval %}#}
+{#        {% for ob in objval %}#}
+{#      <option value="{{ ob.1 }}">{{ ob.0 }}</option>#}
+{##}
+{#                        {% endfor %}#}
+    {#        {% endif %}                </select>#}
+{#                                    </div>#}
+{#                                </div>#}
+{##}
+{#                                 <div class="row margin-bottom-20">#}
+{#                                    <div class="col-md-6 col-md-offset-0">#}
+{##}
+{#                                </div>#}
+{# <div class="row margin-bottom-20">#}
+{#                                    <div class="col-md-6 col-md-offset-0">#}
+{#                                        <input class="form-control" placeholder="Total" required name="total" type="text">#}
+{#                                    </div>#}
+{#                                </div>#}
+{# <div class="row margin-bottom-20">#}
+{#                                    <div class="col-md-6 col-md-offset-0">#}
+{#                                        <input class="form-control" placeholder="Month" required name="month" type="text">#}
+{#                                    </div>#}
+{#                                </div>#}
+{##}
+{##}
+{#      <div class="row margin-bottom-20">#}
+{#                                    <div class="col-md-6 col-md-offset-0">#}
+{#                                         <button type="submit" class="btn btn-primary">ADD</button>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#    </form>#}
+
+</div>
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends 'temp/hod.html' %}
+{% block admin %}
+<div align="center">
+    <h1> Student Details</h1>
+ <form id="form1" name="form1" method="post" action="">
+
+{% csrf_token %}
+      <table>
+          {% if objval %}
+    <tr>
+      <td width="129">Name</td>
+      <td width="145">
+        <input type="text" name="name" value="{{  objval.sname }}" />
+      </td>
+ <td width="700">Date of birth </td>
+      <td width="1"><input type="text" name="dob" value="{{  objval.dob }}" /></td>
+      <td width="161">
+      </td>
+      <td width="66">&nbsp;</td>
+    </tr>
+           <tr>
+
+      <td>Phone number </td>
+      <td>
+        <input type="text" name="ph" value="{{ objval.phone }}"  />
+      </td>
+      <td>Email-id</td>
+      <td><input type="text" name="mail" value="{{ objval.mail }}" /></td>
+  </tr>
+           <tr>
+      <td>Name of Father </td>
+      <td>
+        <input type="text" name="fath" value="{{ objval.father_name }}" />
+     </td>
+          <td>Mobile No </td>
+      <td>
+        <input type="text" name="mob" value="{{ objval.f_mobile }}"/>
+      </td>
+    </tr>
+          <tr>
+      <td>Permanent Residential Address </td>
+      <td>
+        <textarea name="textarea" > {{ objval.per_addr }}</textarea>
+        </td>
+  </tr>
+
+       <tr><td>   <input type="submit" value="submit" name="submit"></td></tr> {% endif %}</table></form></div>
+     {% endblock %}

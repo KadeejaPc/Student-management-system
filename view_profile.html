@@ -1,0 +1,27 @@
+{% extends 'temp/student.html' %}
+{% block admin %}
+<div align="center">
+ <h2 align="center">MY PROFILE</h2>
+    <table  align="center" class="table">
+         {% if objval %}
+        {% for ob in objval %}
+
+            <tr bgcolor="#e6e6fa">   <td>NAME: </td> <td>{{ ob.sname }}</td></tr>
+            <tr>  <td>DOB:</td><td>{{ ob.dob }}</td></tr>
+            <tr bgcolor="#e6e6fa"> <td>SEX:</td> <td>{{ ob.sex }}</td></tr>
+            <tr> <td>BLOOD:</td> <td>{{ ob.blood }}</td></tr>
+            <tr bgcolor="#e6e6fa"> <td>CONTACT:</td><td>{{ ob.phone }}</td></tr>
+        <tr>    <td>MAIL:</td><td>{{ ob.mail }}</td>
+
+
+        </tr>
+
+
+
+        {% endfor %}
+        {% endif %}
+
+    </table>
+
+</div>
+{% endblock %}

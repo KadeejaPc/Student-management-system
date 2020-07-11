@@ -1,0 +1,69 @@
+{% extends 'temp/advisor.html' %}
+{% block admin %}
+
+
+  <label></label>
+{#                                <div class="row margin-bottom-20">#}
+{#                                    <div class="col-md-6 col-md-offset-0">#}
+{#                                        <select class="form-control"  required name="sid" >#}
+{#                                            <option value="">select student</option>#}
+{#                                             {% if objval %}#}
+{#        {% for ob in objval %}#}
+{#      <option value="{{ ob.s_id }}">{{ ob.sname }}</option>#}
+{#        {% endfor %}#}
+{#        {% endif %}#}
+{#                                        </select>#}
+{#                                    </div>#}
+{#                                </div>#}
+{##}
+{#                                  <div class="row margin-bottom-20">#}
+{#                                    <div class="col-md-6 col-md-offset-0">#}
+{#                                        <select class="form-control"  required name="sub" >#}
+{#                                      <option value="">select subject</option>#}
+                                            {% if ob %}
+
+
+{#                                    </div>#}
+{#                                </div>#}
+
+
+                                                <div class="row margin-bottom-20">
+                                    <div class="col-md-6 col-md-offset-0">
+                                    First Internal:   <input class="form-control" placeholder="First Internal" value="{{ ob.inter1 }}" required name="fi" type="text" maxlength="15" readonly>
+                                    </div>
+                                </div>
+ <div class="row margin-bottom-20">
+                                    <div class="col-md-6 col-md-offset-0">
+                                     Second Internal:   <input class="form-control" placeholder="Second Internal" value="{{ ob.inter2 }}"required name="si" type="text" maxlength="15" readonly>
+                                    </div>
+                                </div>
+<div class="row margin-bottom-20">
+                                    <div class="col-md-6 col-md-offset-0">
+                                    First Assignment:   <input class="form-control" placeholder="First Assignment" value={{ ob.ass1 }} required name="fa" type="text" maxlength="5" readonly>
+                                    </div>
+                                </div>
+ <div class="row margin-bottom-20">
+                                    <div class="col-md-6 col-md-offset-0">
+                                     Second Assignment:  <input class="form-control" placeholder="Second Assignment" value={{ ob.ass2 }} required name="sa" type="text" maxlength="5" readonly>
+                                    </div>
+                                </div>
+  <div class="row margin-bottom-20">
+                                    <div class="col-md-6 col-md-offset-0">
+
+                                    </div>
+                                </div>
+
+      <div class="row margin-bottom-20">
+                                    <div class="col-md-6 col-md-offset-0">
+
+
+                                    </div>
+                                </div>
+
+
+                                            Average:    <input type="text" class="btn btn-primary" value="{{ avg }}" readonly>
+{% endif %}
+
+
+</div>
+{% endblock %}

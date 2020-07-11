@@ -1,0 +1,52 @@
+{% extends 'temp/hod.html' %}
+{% block admin %}
+<div align="center">
+    <h1>ADD COURSE MAPPING</h1>
+ <form id="form1" name="form1" method="post" action="">
+
+{% csrf_token %}
+
+                                <label></label>
+
+
+
+  <div class="row margin-bottom-20">
+                                    <div class="col-md-6 col-md-offset-0">
+                                        <select class="form-control"  required name="sem" >
+                                            <option value="">select sem</option>
+                                             <option value="1"> 1</option>
+                                             <option value="2"> 2</option>
+                                             <option value="3"> 3</option>
+                                             <option value="4"> 4</option>
+                                             <option value="5"> 5</option>
+                                             <option value="6"> 6</option>
+
+
+                                        </select>
+                                    </div>
+                                </div>
+  <label></label>
+
+<div class="row margin-bottom-20">
+                                    <div class="col-md-6 col-md-offset-0">
+                                        <input class="form-control" placeholder="Subject name" required name="subname" type="text">
+                                    </div>
+                                </div>
+
+                                <div class="row margin-bottom-20">
+                                    <div class="col-md-6 col-md-offset-0">
+                                        <input class="form-control" placeholder="Subject code" required name="subcode" type="text">
+                                    </div>
+                                </div>
+
+{#                                #}
+      <div class="row margin-bottom-20">
+                                    <div class="col-md-6 col-md-offset-0">
+                                         <button type="submit" class="btn btn-primary">ADD</button>
+                                    </div>
+                                </div>
+
+                            </form>
+
+
+{% endblock %}

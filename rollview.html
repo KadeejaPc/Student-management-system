@@ -1,0 +1,39 @@
+{% extends 'temp/hod.html' %}
+{% block admin %}
+<div align="center">
+ <h3 align="center">Faculty Roles</h3>
+    <table border="1" align="center" class="table">
+        <tr bgcolor="#e6e6fa">
+{#            <td>S No</td>#}
+            <td>Name </td>
+
+            <td>Role</td>
+
+            <td>Semester</td>
+            <td>Batch</td>
+             <td>From </td>
+            <td>To </td>
+        </tr>
+        {% if objval %}
+
+        {% for ob in objval %}
+        <tr>
+{#            <td>{{ ob.s_id }}</td>#}
+            <td>{{ ob.1 }}</td>
+            <td>{{ ob.32 }}</td>
+            <td>{{ ob.33 }}</td>
+            <td>{{ ob.36 }}</td>
+         <td>{{ ob.34 }}</td>
+         <td>{{ ob.35 }}</td>
+
+
+
+        </tr>
+
+        {% endfor %}
+        {% endif %}
+
+    </table>
+
+</div>
+{% endblock %}

@@ -1,0 +1,112 @@
+{% extends 'temp/hod.html' %}
+{% block admin %}
+<div align="center">
+    <h1> ROLL ALLOCATION</h1>
+ <form id="form1" name="form1" method="post" action="">
+
+{% csrf_token %}
+
+                                <label></label>
+                                <div class="row margin-bottom-20">
+                                    <div class="col-md-6 col-md-offset-0"> <span class="color-red">Select Teacher:</span>
+                                        <select class="form-control"  required name="tid" >
+                                            <option value="">select teacher</option>
+                                             {% if objval %}
+        {% for ob in objval %}
+      <option value="{{ ob.t_id }}">{{ ob.fullname }}</option>
+        {% endfor %}
+        {% endif %}
+                                        </select>
+                                    </div>
+                                </div>
+                                <label>
+{#                                    <span class="color-red">from</span>#}
+                                </label>
+                                <div class="row margin-bottom-20">
+                                    <div class="col-md-6 col-md-offset-0"><span class="color-red">From:</span> <input class="form-control" placeholder="Date" required name="fromdt" type="date">
+                                    </div>
+                                </div>
+  <label>
+{#                                    <span class="color-red">to </span>#}
+                                </label>
+  <div class="row margin-bottom-20">
+                                    <div class="col-md-6 col-md-offset-0">
+                                     <span class="color-red">To:</span>    <input class="form-control" placeholder="Date" required name="tdate" type="date">
+                                    </div>
+                                </div>
+ <label>
+{#                                    <span class="color-red">Semester</span>#}
+                                </label>
+                                <div class="row margin-bottom-20">
+                                    <div class="col-md-6 col-md-offset-0">
+                                       <span class="color-red">Semester:</span>  <select class="form-control"  required name="sem" >
+                                            <option value="">select sem</option>
+                                             <option value="1"> 1</option>
+                                             <option value="2"> 2</option>
+                                             <option value="3"> 3</option>
+                                             <option value="4"> 4</option>
+                                             <option value="5"> 5</option>
+                                             <option value="6"> 6</option>
+
+
+                                        </select>
+                                    </div>
+                                </div>
+  <label>
+      <label>
+                                    <span class="color-red">Batch:</span>
+                                </label>
+                                <div class="row margin-bottom-20">
+{#                                    <div class="col-md-6 col-md-offset-0">#}
+                                        <select class="form-control"  required name="batch" >
+                                            <option value="0000">select batch</option>
+                                             <option value="2016">2016</option>
+                                             <option value="2017"> 2017</option>
+                                             <option value="2018"> 2018</option>
+                                             <option value="2019"> 2019</option>
+                                             <option value="2020"> 2020</option>
+                                             <option value="2021"> 2021</option>
+
+
+                                        </select>
+                                    </div>
+{#                                </div>#}
+
+
+                                <label></label>
+                                 <div class="row margin-bottom-20">
+                                    <div class="col-md-6 col-md-offset-0">
+                                        <input class="form-control" required name="type" type="radio" value="advisor">Advisor
+                                        <input class="form-control" required name="type" type="radio" value="tutor">Tutor
+                                        <input class="form-control" required name="type" type="radio" value="both">Both
+                                    </div>
+                                </div>
+ <label></label>
+{#                                 <div class="row margin-bottom-20">#}
+{#                                    <div class="col-md-6 col-md-offset-0">#}
+{#                                        <input class="form-control" placeholder="USERNAME" required name="uname" type="text">#}
+{#                                    </div>#}
+{#                                </div>#}
+{# <label></label>#}
+{#                                 <div class="row margin-bottom-20">#}
+{#                                    <div class="col-md-6 col-md-offset-0">#}
+{#                                        <input class="form-control" placeholder="Password" required name="pswd" type="password">#}
+{#                                    </div>#}
+{#                                </div>#}
+      <div class="row margin-bottom-20">
+                                    <div class="col-md-6 col-md-offset-0">
+                                         <button type="submit" class="btn btn-primary">ADD</button>
+                                        {% if messages %}
+{#    <ul class="messages">#}
+{% for m in messages %}
+{#    <li>#}
+{#        <div class="alert alert-success">#}
+            <script>alert("{{ m }}")</script>{% endfor %}{% endif %}
+                                        <a href="{% url 'rollview' %}">VIEW</a>
+                                    </div>
+                                </div>
+  </label>
+                            </form>
+</div>
+
+{% endblock %}
